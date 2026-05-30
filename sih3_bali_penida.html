@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portal SIH3 Wilayah Sungai Bali-Penida</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b2545;
+      --deep: #13315c;
+      --sea: #1e6091;
+      --aqua: #168aad;
+      --mist: #e6f1f7;
+      --sand: #f6f1e7;
+      --gold: #c69749;
+    }
+
+    html,
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      background: #f8fafc;
+    }
+
+    .font-display {
+      font-family: 'Fraunces', serif;
+      letter-spacing: -.01em;
+    }
+
+    .hero {
+      background:
+        radial-gradient(1200px 500px at 80% -10%, rgba(22, 138, 173, .35), transparent 60%),
+        radial-gradient(900px 500px at 0% 10%, rgba(11, 37, 69, .85), transparent 60%),
+        linear-gradient(135deg, #0b2545 0%, #13315c 45%, #1e6091 100%);
+    }
+
+    .wave {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      line-height: 0;
+    }
+
+    .chip {
+      backdrop-filter: blur(8px);
+    }
+
+    .card-grad-h {
+      background: linear-gradient(160deg, #ffffff 0%, #eaf4fb 100%);
+    }
+
+    .card-grad-m {
+      background: linear-gradient(160deg, #ffffff 0%, #e8f0ff 100%);
+    }
+
+    .card-grad-g {
+      background: linear-gradient(160deg, #ffffff 0%, #f3ecdd 100%);
+    }
+
+    .ring-soft {
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 20px 40px -20px rgba(11, 37, 69, .25);
+    }
+
+    .tab-btn[aria-selected="true"] {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .tab-btn[aria-selected="true"] .dot {
+      background: var(--gold);
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .marquee {
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .ticker {
+      animation: slide 40s linear infinite;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-br {
+        display: none;
+      }
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    details>summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    details>summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between gap-3 sm:gap-6">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="leading-tight min-w-0">
+          <div class="font-display text-base sm:text-lg font-semibold text-[var(--ink)] truncate">Portal SIH3</div>
+          <div class="text-xs sm:text-sm text-slate-500">Wilayah Sungai Bali Penida</div>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+        <button data-tab="home"
+          class="tab-btn px-4 py-2 rounded-md text-slate-700 hover:bg-slate-100 inline-flex items-center gap-2">
+          Beranda
+        </button>
+
+        <div class="relative group py-2">
+          <button
+            class="px-4 py-2 rounded-md text-slate-700 hover:bg-slate-100 inline-flex items-center gap-2 focus:outline-none">
+            <span>Informasi H3</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div
+            class="absolute left-0 top-full hidden group-hover:block w-52 bg-white rounded-md shadow-lg py-2 z-50 border border-slate-100">
+            <button data-tab="hidrologi" class="tab-btn w-full text-left px-4 py-2 text-slate-700 hover:bg-slate-100">
+              Hidrologi
+            </button>
+            <button data-tab="hidrometeorologi"
+              class="tab-btn w-full text-left px-4 py-2 text-slate-700 hover:bg-slate-100">
+              Hidrometeorologi
+            </button>
+            <button data-tab="hidrogeologi"
+              class="tab-btn w-full text-left px-4 py-2 text-slate-700 hover:bg-slate-100">
+              Hidrogeologi
+            </button>
+          </div>
+        </div>
+
+        <button data-tab="dokumen"
+          class="tab-btn px-4 py-2 rounded-md text-slate-700 hover:bg-slate-100 inline-flex items-center gap-2">
+          Dokumen Hukum
+        </button>
+
+        <button data-tab="kontak"
+          class="tab-btn px-4 py-2 rounded-md text-slate-700 hover:bg-slate-100 inline-flex items-center gap-2">
+          Kontak
+        </button>
+      </nav>
+
+      <a href="#"
+        class="hidden lg:inline-flex items-center gap-2 bg-[var(--gold)] hover:bg-amber-500 text-[var(--mist)] font-semibold text-md px-5 py-3 rounded-md shrink-0">
+        Login
+      </a>
+
+      <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 text-[var(--ink)]"
+        aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white">
+      <nav class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+        <button data-tab="home"
+          class="tab-btn text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">Beranda</button>
+
+        <div class="text-slate-400 px-4 pt-2 pb-1 text-xs font-bold uppercase tracking-wider">Informasi H3</div>
+        <div class="pl-4 flex flex-col gap-1 border-l-2 border-slate-100 ml-4 mb-2">
+          <button data-tab="hidrologi"
+            class="tab-btn text-left px-4 py-2 rounded-xl text-slate-700 hover:bg-slate-100">Hidrologi</button>
+          <button data-tab="hidrometeorologi"
+            class="tab-btn text-left px-4 py-2 rounded-xl text-slate-700 hover:bg-slate-100">Hidrometeorologi</button>
+          <button data-tab="hidrogeologi"
+            class="tab-btn text-left px-4 py-2 rounded-xl text-slate-700 hover:bg-slate-100">Hidrogeologi</button>
+        </div>
+
+        <button data-tab="dokumen"
+          class="tab-btn text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">Dokumen Hukum</button>
+        <button data-tab="kontak"
+          class="tab-btn text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">Kontak</button>
+
+        <a href="#"
+          class="mt-2 inline-flex items-center justify-center gap-2 bg-[var(--gold)] text-[var(--ink)] font-semibold px-4 py-3 rounded-md">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============== HOME ============== -->
+  <section id="page-home" class="page active">
+    <div class="hero relative text-white overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-40 sm:pb-48 lg:pb-56 flex flex-col items-center justify-center text-center relative">
+        <div class="max-w-4xl">
+          <h1 class="font-display text-3xl sm:text-4xl md:text-6xl font-semibold mt-10 leading-[1.1]">
+            Selamat datang di
+            <div>
+              <span style="color: var(--gold);">Portal SIH3</span> Wilayah Sungai Bali Penida
+            </div>
+          </h1>
+          <div class="mt-7 flex flex-wrap gap-3 justify-center">
+            <button data-tab="hidrologi"
+              class="tab-btn bg-white text-[var(--ink)] font-semibold px-7 py-3 rounded-md hover:bg-slate-100 inline-flex items-center gap-2">
+              Telusuri
+            </button>
+            <button data-tab="kontak"
+              class="tab-btn bg-transparent text-[var(--mist)] font-semibold px-7 py-3 rounded-md hover:bg-slate-100 hover:text-black hover:shadow-2xl inline-flex items-center gap-2 border">
+              Kontak
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" width="100%" height="80">
+        <path fill="#f8fafc" d="M0,32 C240,80 480,80 720,48 C960,16 1200,16 1440,48 L1440,80 L0,80 Z" />
+      </svg>
+    </div>
+
+    <!-- MAIN TABLE OF CONTENT -->
+    <section id="tentang" class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 sm:mt-12 lg:mt-16 relative z-10">
+      <div class="flex flex-wrap items-end justify-between gap-3 mb-6">
+        <div>
+          <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--ink)] mt-2">Tiga Pilar
+            Informasi SIH3</h2>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <!-- Hidrologi -->
+        <button data-tab="hidrologi"
+          class="tab-btn text-left card-grad-h rounded-3xl p-6 ring-soft border border-white hover:-translate-y-1 transition group">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-[var(--sea)] text-white grid place-items-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13z" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-[var(--ink)] mt-5">Hidrologi</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Menyajikan data curah hujan, ketersediaan air, debit, kandungan sedimen, dan analisis neraca air pada Sumber
+            Air secara berkala.
+          </p>
+          <div
+            class="mt-5 inline-flex items-center gap-2 text-[var(--sea)] font-semibold text-sm group-hover:gap-3 transition-all">
+            Lihat Selengkapnya
+          </div>
+        </button>
+
+        <!-- Hidrometeorologi -->
+        <button data-tab="hidrometeorologi"
+          class="tab-btn text-left card-grad-m rounded-3xl p-6 ring-soft border border-white hover:-translate-y-1 transition group">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-[var(--aqua)] text-white grid place-items-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 20 11a4 4 0 0 1 0 8H7z" />
+                <path d="M9 22l1-3M13 22l1-3M17 22l1-3" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-[var(--ink)] mt-5">Hidrometeorologi</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Menyediakan prakiraan hujan, proyeksi iklim, dan peringatan dini kondisi cuaca ekstrem terkait fenomena
+            atmosfer terkini.
+          </p>
+          <div
+            class="mt-5 inline-flex items-center gap-2 text-[var(--aqua)] font-semibold text-sm group-hover:gap-3 transition-all">
+            Lihat Selengkapnya
+          </div>
+        </button>
+
+        <button data-tab="hidrogeologi"
+          class="tab-btn text-left card-grad-m rounded-3xl p-6 ring-soft border border-white hover:-translate-y-1 transition group">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-[var(--aqua)] text-white grid place-items-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 7h18M3 12h18M3 17h18" />
+                <path d="M8 3v18M16 3v18" opacity=".4" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-[var(--ink)] mt-5">Hidrogeologi</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Menyajikan informasi potensi air tanah, pemetaan kondisi akuifer, serta pemantauan pemanfaatan air bawah
+            tanah secara berkelanjutan.
+          </p>
+          <div
+            class="mt-5 inline-flex items-center gap-2 text-[var(--aqua)] font-semibold text-sm group-hover:gap-3 transition-all">
+            Lihat Selengkapnya
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- PENGERTIAN SIH3 -->
+    <section id="page-kolaborasi-inline" class="max-w-7xl mx-auto px-4 sm:px-6 mt-16 sm:mt-20">
+      <div class="rounded-3xl bg-[var(--ink)] text-white p-6 sm:p-8 md:p-12 relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[var(--aqua)]/30 blur-3xl"></div>
+        <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-12 text-center flex flex-col items-center mx-auto">
+            <h3 class="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mt-3">Apa Itu SIH3</h3>
+            <p class="text-white/75 mt-3 max-w-md">Portal SIH3 merupakan platform integrasi data dan informasi
+              pengelolaan hidrologi, hidrometeorologi, dan Hidrogeologi
+              yang dibangun atas kerja sama dengan Dinas PUPR
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stakeholder Section -->
+    <section id="stakeholder" class="max-w-7xl mx-auto px-4 sm:px-6 mt-16 sm:mt-20">
+      <div class="mt-5">
+        <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--ink)] mt-2">Instansi Terkait
+          SIH3</h1>
+        <p class="text-slate-600 mt-2 max-w-2xl">Daftar instansi, lembaga, dan akademisi yang bersinergi dalam
+          pengelolaan serta pertukaran data Hidrologi, Hidrometeorologi, dan Hidrogeologi (SIH3) di Wilayah Sungai
+          Bali Penida guna mewujudkan pengelolaan sumber daya air yang terpadu.</p>
+      </div>
+      <div id="stakeGridFull" class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    </section>
+
+    <div class="h-20"></div>
+  </section>
+
+  <!-- ============== SUB PAGE TEMPLATE (Hidrologi / Hidrometeorologi / Hidrogeologi) ============== -->
+  <!-- Hidrologi -->
+  <section id="page-hidrologi" class="page">
+    <!-- Page Header -->
+    <div class="bg-gradient-to-b from-[var(--mist)] to-transparent border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <nav class="text-xs text-slate-500">
+          <a href="#" data-tab="home" class="tab-btn hover:text-[var(--sea)]">Beranda</a>
+          <span class="mx-1">/</span>
+          <span class="text-[var(--ink)] font-medium">Hidrologi</span>
+        </nav>
+        <div class="mt-5 flex items-start justify-between gap-6 flex-wrap">
+          <div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--ink)] mt-2">Hidrologi</h1>
+            <p class="text-slate-500 mt-2 text-sm max-w-xl">Data hidrologi Wilayah Sungai Bali-Penida — klik titik stasiun pada peta untuk melihat informasi detail.</p>
+          </div>
+          <span class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-full px-3 py-1.5 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Pratinjau Tampilan
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat Summary Bar -->
+    <div class="border-b border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[var(--mist)] grid place-items-center text-[var(--sea)] shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13z"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">Total Stasiun</div>
+            <div class="font-bold text-[var(--ink)] text-lg leading-tight">24</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 grid place-items-center text-blue-600 shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">DAS Tercakup</div>
+            <div class="font-bold text-[var(--ink)] text-lg leading-tight">9</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 grid place-items-center text-amber-600 shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">Update Terakhir</div>
+            <div class="font-bold text-[var(--ink)] text-sm leading-tight">27 Mei 2026</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 grid place-items-center text-emerald-600 shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">Stasiun Aktif</div>
+            <div class="font-bold text-[var(--ink)] text-lg leading-tight">18 <span class="text-xs text-slate-400 font-normal">/ 24</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+
+      <!-- Filter Bar -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 mb-6">
+        <div class="flex items-center gap-2 mb-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[var(--sea)]"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          <span class="text-sm font-semibold text-[var(--ink)]">Filter Data</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <!-- Kabupaten/Kota -->
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1">Kabupaten/Kota</label>
+            <select id="filter-kab" onchange="applyFilters()" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 bg-white text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]">
+              <option value="">Semua</option>
+              <option>Kab. Buleleng</option>
+              <option>Kab. Jembrana</option>
+              <option>Kab. Tabanan</option>
+              <option>Kab. Badung</option>
+              <option>Kota Denpasar</option>
+              <option>Kab. Gianyar</option>
+              <option>Kab. Bangli</option>
+              <option>Kab. Klungkung</option>
+              <option>Kab. Karangasem</option>
+            </select>
+          </div>
+          <!-- DAS -->
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1">Daerah Aliran Sungai</label>
+            <select id="filter-das" onchange="applyFilters()" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 bg-white text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]">
+              <option value="">Semua DAS</option>
+              <option>DAS Tukad Ayung</option>
+              <option>DAS Tukad Unda</option>
+              <option>DAS Tukad Penet</option>
+              <option>DAS Tukad Badung</option>
+              <option>DAS Tukad Pakerisan</option>
+              <option>DAS Tukad Sangsang</option>
+              <option>DAS Tukad Petanu</option>
+              <option>DAS Tukad Balian</option>
+              <option>DAS Tukad Buleleng</option>
+            </select>
+          </div>
+          <!-- Jenis Data -->
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1">Jenis Data</label>
+            <select id="filter-jenis" onchange="applyFilters()" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 bg-white text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]">
+              <option value="">Semua Jenis</option>
+              <option>Curah Hujan</option>
+              <option>Debit Sungai</option>
+              <option>Tinggi Muka Air</option>
+              <option>Sedimen</option>
+              <option>Neraca Air</option>
+            </select>
+          </div>
+          <!-- Periode -->
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1">Periode</label>
+            <select id="filter-periode" onchange="applyFilters()" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 bg-white text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]">
+              <option>Harian</option>
+              <option>Bulanan</option>
+              <option>Tahunan</option>
+            </select>
+          </div>
+          <!-- Status -->
+          <div>
+            <label class="block text-xs font-medium text-slate-500 mb-1">Status Stasiun</label>
+            <select id="filter-status" onchange="applyFilters()" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 bg-white text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]">
+              <option value="">Semua Status</option>
+              <option>Aktif</option>
+              <option>Tidak Aktif</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between">
+          <span id="filter-count" class="text-xs text-slate-500">Menampilkan 24 dari 24 stasiun</span>
+          <button onclick="resetFilters()" class="text-xs text-[var(--sea)] hover:underline font-medium">Reset Filter</button>
+        </div>
+      </div>
+
+      <!-- Map + Info Panel -->
+      <div class="grid lg:grid-cols-12 gap-6 mb-6">
+
+        <!-- Map -->
+        <div class="lg:col-span-8">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[var(--sea)]"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span class="text-sm font-semibold text-[var(--ink)]">Peta Interaktif Stasiun Hidrologi</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs text-slate-500">
+                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>Aktif</span>
+                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-slate-400 inline-block"></span>Tidak Aktif</span>
+                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>Dipilih</span>
+              </div>
+            </div>
+            <div class="relative" style="height:480px; background: #eaf4fb;">
+              <!-- SVG Map of Bali -->
+              <svg id="bali-map" viewBox="0 0 900 480" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block;">
+                <defs>
+                  <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#c8e6f5"/>
+                    <stop offset="100%" stop-color="#a3d3ee"/>
+                  </linearGradient>
+                  <linearGradient id="landGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#d4e8b0"/>
+                    <stop offset="100%" stop-color="#b8d88a"/>
+                  </linearGradient>
+                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0b254540"/>
+                  </filter>
+                </defs>
+
+                <!-- Sea background -->
+                <rect width="900" height="480" fill="url(#seaGrad)"/>
+
+                <!-- Bali Island shape (simplified polygon) -->
+                <polygon id="bali-island"
+                  points="125,215 148,190 175,170 215,155 265,148 310,140 360,135 410,130 455,128 500,125 545,127 590,132 635,140 675,150 710,162 740,178 762,195 778,215 785,235 782,258 772,278 755,295 730,308 700,320 665,328 625,332 580,335 535,337 490,338 445,337 400,335 360,330 318,322 278,312 242,298 210,282 182,262 158,240 138,228"
+                  fill="url(#landGrad)" stroke="#8ab56a" stroke-width="2" filter="url(#shadow)"/>
+
+                <!-- Nusa Penida Island -->
+                <polygon id="nusa-penida"
+                  points="610,380 640,370 670,365 700,368 720,378 730,392 725,408 710,420 690,428 665,430 640,425 618,412 608,398"
+                  fill="url(#landGrad)" stroke="#8ab56a" stroke-width="1.5"/>
+                <text x="665" y="400" text-anchor="middle" font-size="9" fill="#4a7c2f" font-family="Poppins,sans-serif" font-weight="600">Nusa Penida</text>
+
+                <!-- Nusa Lembongan -->
+                <ellipse cx="580" cy="388" rx="20" ry="13" fill="#c8dfa0" stroke="#8ab56a" stroke-width="1.2"/>
+                <text x="580" y="392" text-anchor="middle" font-size="7" fill="#4a7c2f" font-family="Poppins,sans-serif">N. Lembongan</text>
+
+                <!-- District labels on land -->
+                <text x="200" y="200" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Jembrana</text>
+                <text x="300" y="185" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Tabanan</text>
+                <text x="420" y="175" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Badung</text>
+                <text x="500" y="270" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Denpasar</text>
+                <text x="565" y="195" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Gianyar</text>
+                <text x="560" y="255" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Klungkung</text>
+                <text x="630" y="210" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Karangasem</text>
+                <text x="460" y="200" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Bangli</text>
+                <text x="400" y="145" text-anchor="middle" font-size="9" fill="#2d5a1b" font-family="Poppins,sans-serif" font-weight="500" opacity="0.7">Buleleng</text>
+
+                <!-- River lines (DAS) -->
+                <g stroke="#3a8fc0" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4,3">
+                  <!-- Tukad Ayung -->
+                  <path d="M430,155 Q435,190 440,220 Q445,255 450,295"/>
+                  <!-- Tukad Unda -->
+                  <path d="M570,155 Q572,185 578,215 Q585,250 590,295"/>
+                  <!-- Tukad Penet -->
+                  <path d="M360,148 Q362,185 368,215 Q372,250 375,295"/>
+                  <!-- Tukad Badung -->
+                  <path d="M470,148 Q475,180 480,215 Q483,250 488,295"/>
+                  <!-- Tukad Balian -->
+                  <path d="M255,160 Q258,195 262,225 Q266,255 268,295"/>
+                  <!-- Tukad Buleleng area -->
+                  <path d="M660,160 Q665,190 668,220 Q670,250 672,295"/>
+                </g>
+
+                <!-- Station markers (interactive) - rendered by JS -->
+                <g id="station-markers"></g>
+
+                <!-- Compass rose -->
+                <g transform="translate(840,60)">
+                  <circle cx="0" cy="0" r="18" fill="white" opacity="0.8" stroke="#ccc" stroke-width="1"/>
+                  <text x="0" y="-7" text-anchor="middle" font-size="9" font-weight="700" fill="#0b2545" font-family="Poppins,sans-serif">U</text>
+                  <polygon points="0,-14 3,-4 0,-8 -3,-4" fill="#0b2545"/>
+                  <polygon points="0,14 3,4 0,8 -3,4" fill="#aaa"/>
+                  <polygon points="-14,0 -4,-3 -8,0 -4,3" fill="#aaa"/>
+                  <polygon points="14,0 4,-3 8,0 4,3" fill="#aaa"/>
+                </g>
+
+                <!-- Scale bar -->
+                <g transform="translate(30, 450)">
+                  <rect x="0" y="0" width="60" height="6" fill="#0b2545" opacity="0.5" rx="2"/>
+                  <text x="0" y="18" font-size="8" fill="#0b2545" font-family="Poppins,sans-serif" opacity="0.7">0</text>
+                  <text x="55" y="18" font-size="8" fill="#0b2545" font-family="Poppins,sans-serif" opacity="0.7">30 km</text>
+                </g>
+              </svg>
+
+              <!-- Map tooltip -->
+              <div id="map-tooltip" class="absolute hidden bg-white rounded-xl shadow-lg border border-slate-200 p-3 text-xs z-30 pointer-events-none" style="min-width:180px; max-width:220px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Station Detail Panel -->
+        <div class="lg:col-span-4">
+          <div id="station-panel" class="bg-white rounded-2xl border border-slate-200 shadow-sm h-full flex flex-col">
+            <!-- Default state -->
+            <div id="panel-empty" class="flex-1 flex flex-col items-center justify-center p-6 text-center">
+              <div class="w-16 h-16 rounded-2xl bg-[var(--mist)] grid place-items-center text-[var(--sea)] mb-4">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13z"/></svg>
+              </div>
+              <div class="font-semibold text-[var(--ink)] text-sm">Pilih Stasiun</div>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">Klik salah satu marker pada peta untuk melihat detail data stasiun hidrologi.</p>
+              <div class="mt-5 w-full space-y-2">
+                <div class="bg-slate-50 rounded-xl px-4 py-3 text-left flex items-center gap-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span class="text-xs text-slate-600"><strong>18</strong> stasiun aktif tersedia</span>
+                </div>
+                <div class="bg-slate-50 rounded-xl px-4 py-3 text-left flex items-center gap-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-slate-400 shrink-0"></span>
+                  <span class="text-xs text-slate-600"><strong>6</strong> stasiun tidak aktif</span>
+                </div>
+              </div>
+            </div>
+            <!-- Detail state (hidden by default) -->
+            <div id="panel-detail" class="hidden flex-1 flex flex-col">
+              <div class="px-5 pt-5 pb-4 border-b border-slate-100">
+                <div class="flex items-start justify-between gap-2">
+                  <div>
+                    <div id="detail-name" class="font-display font-semibold text-[var(--ink)] text-base leading-tight"></div>
+                    <div id="detail-id" class="text-xs text-slate-400 mt-0.5"></div>
+                  </div>
+                  <span id="detail-badge" class="shrink-0 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold"></span>
+                </div>
+              </div>
+              <div class="px-5 py-4 space-y-3 flex-1">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="bg-slate-50 rounded-xl p-3">
+                    <div class="text-xs text-slate-400">Kabupaten</div>
+                    <div id="detail-kab" class="text-sm font-semibold text-[var(--ink)] mt-0.5"></div>
+                  </div>
+                  <div class="bg-slate-50 rounded-xl p-3">
+                    <div class="text-xs text-slate-400">DAS</div>
+                    <div id="detail-das" class="text-sm font-semibold text-[var(--ink)] mt-0.5"></div>
+                  </div>
+                  <div class="bg-slate-50 rounded-xl p-3">
+                    <div class="text-xs text-slate-400">Jenis Stasiun</div>
+                    <div id="detail-jenis" class="text-sm font-semibold text-[var(--ink)] mt-0.5"></div>
+                  </div>
+                  <div class="bg-slate-50 rounded-xl p-3">
+                    <div class="text-xs text-slate-400">Elevasi</div>
+                    <div id="detail-elev" class="text-sm font-semibold text-[var(--ink)] mt-0.5"></div>
+                  </div>
+                </div>
+                <div class="bg-[var(--mist)] rounded-xl p-4">
+                  <div class="text-xs font-semibold text-[var(--sea)] mb-2">Data Terkini</div>
+                  <div id="detail-data" class="space-y-1.5"></div>
+                </div>
+                <!-- Sparkline area -->
+                <div>
+                  <div class="text-xs font-semibold text-slate-500 mb-2">Tren 7 Hari Terakhir</div>
+                  <div id="detail-chart" class="rounded-xl overflow-hidden bg-slate-50" style="height:60px;"></div>
+                </div>
+              </div>
+              <div class="px-5 pb-5">
+                <button class="w-full bg-[var(--ink)] hover:bg-[var(--deep)] text-white font-semibold text-sm py-2.5 rounded-xl transition">Unduh Data CSV</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[var(--sea)]"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span class="text-sm font-semibold text-[var(--ink)]">Daftar Stasiun Hidrologi</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" id="table-search" oninput="filterTable()" placeholder="Cari stasiun..." class="text-xs border border-slate-200 rounded-lg px-3 py-1.5 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--aqua)] w-44">
+            <button class="inline-flex items-center gap-1.5 text-xs border border-slate-200 rounded-lg px-3 py-1.5 bg-white hover:bg-slate-50 font-medium text-[var(--ink)]">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Unduh
+            </button>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-50 text-xs text-slate-500 uppercase tracking-wider border-b border-slate-100">
+                <th class="text-left px-5 py-3 font-semibold">ID Stasiun</th>
+                <th class="text-left px-4 py-3 font-semibold">Nama Stasiun</th>
+                <th class="text-left px-4 py-3 font-semibold">Kabupaten</th>
+                <th class="text-left px-4 py-3 font-semibold">DAS</th>
+                <th class="text-left px-4 py-3 font-semibold">Jenis</th>
+                <th class="text-left px-4 py-3 font-semibold">Debit (m³/s)</th>
+                <th class="text-left px-4 py-3 font-semibold">TMA (m)</th>
+                <th class="text-left px-4 py-3 font-semibold">Status</th>
+              </tr>
+            </thead>
+            <tbody id="station-table-body" class="divide-y divide-slate-100">
+            </tbody>
+          </table>
+        </div>
+        <div class="px-5 py-3 border-t border-slate-100 text-xs text-slate-400 flex items-center justify-between">
+          <span id="table-count">Menampilkan 24 stasiun</span>
+          <span>Data per 27 Mei 2026 · 08:00 WITA</span>
+        </div>
+      </div>
+
+      <!-- Data Type Cards -->
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:-translate-y-0.5 transition group cursor-pointer">
+          <div class="w-11 h-11 rounded-xl bg-blue-50 grid place-items-center text-blue-600 mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/><polyline points="8 14 12 10 16 14"/><line x1="12" y1="10" x2="12" y2="22"/></svg>
+          </div>
+          <div class="font-semibold text-[var(--ink)]">Curah Hujan</div>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Data hujan harian, bulanan, dan tahunan dari seluruh stasiun penakar hujan.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs text-blue-600 font-semibold">12 stasiun aktif</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 group-hover:text-[var(--sea)] transition"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:-translate-y-0.5 transition group cursor-pointer">
+          <div class="w-11 h-11 rounded-xl bg-[var(--mist)] grid place-items-center text-[var(--sea)] mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
+          </div>
+          <div class="font-semibold text-[var(--ink)]">Debit & Tinggi Muka Air</div>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Pengukuran debit aliran sungai dan tinggi muka air dari stasiun AWLR.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs text-[var(--sea)] font-semibold">8 stasiun aktif</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 group-hover:text-[var(--sea)] transition"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:-translate-y-0.5 transition group cursor-pointer">
+          <div class="w-11 h-11 rounded-xl bg-amber-50 grid place-items-center text-amber-600 mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="font-semibold text-[var(--ink)]">Kandungan Sedimen</div>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Konsentrasi sedimen tersuspensi dan angkutan sedimen dasar sungai.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs text-amber-600 font-semibold">5 stasiun aktif</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 group-hover:text-amber-500 transition"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:-translate-y-0.5 transition group cursor-pointer">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 grid place-items-center text-emerald-600 mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="font-semibold text-[var(--ink)]">Neraca Air</div>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Analisis keseimbangan air antara presipitasi, evapotranspirasi, dan limpasan per DAS.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs text-emerald-600 font-semibold">9 DAS tercakup</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 group-hover:text-emerald-500 transition"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:-translate-y-0.5 transition group cursor-pointer">
+          <div class="w-11 h-11 rounded-xl bg-purple-50 grid place-items-center text-purple-600 mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="font-semibold text-[var(--ink)]">Ketersediaan Air</div>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Indikasi volume dan potensi ketersediaan air pada sumber-sumber air utama.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs text-purple-600 font-semibold">Per sumber air</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 group-hover:text-purple-500 transition"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:-translate-y-0.5 transition group cursor-pointer">
+          <div class="w-11 h-11 rounded-xl bg-rose-50 grid place-items-center text-rose-600 mb-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="font-semibold text-[var(--ink)]">Kondisi Aliran Air</div>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Informasi kondisi aliran, banjir, dan karakteristik hidraulik sungai secara berkala.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs text-rose-600 font-semibold">Real-time</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 group-hover:text-rose-500 transition"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .station-marker { cursor: pointer; transition: all 0.15s; }
+      .station-marker:hover circle { filter: brightness(1.15); }
+      .station-marker.selected circle.outer { stroke: #c69749; stroke-width: 3; }
+    </style>
+
+    <script>
+      (function() {
+        const stations = [
+          { id:'HID-001', name:'Sta. Ayung Hulu', kab:'Kab. Badung', das:'DAS Tukad Ayung', jenis:'AWLR', elev:'312 m dpl', status:'Aktif', debit:'8.42', tma:'1.23', x:435, y:175, trend:[6.1,6.8,7.2,7.9,8.1,8.3,8.42] },
+          { id:'HID-002', name:'Sta. Ayung Hilir', kab:'Kota Denpasar', das:'DAS Tukad Ayung', jenis:'AWLR', elev:'42 m dpl', status:'Aktif', debit:'14.20', tma:'2.10', x:455, y:280, trend:[12.1,12.8,13.5,13.9,14.0,14.1,14.20] },
+          { id:'HID-003', name:'Sta. Penakar Kintamani', kab:'Kab. Bangli', das:'DAS Tukad Ayung', jenis:'ARR', elev:'1250 m dpl', status:'Aktif', debit:'-', tma:'-', x:470, y:195, trend:[22,18,30,12,8,15,20] },
+          { id:'HID-004', name:'Sta. Unda Hulu', kab:'Kab. Karangasem', das:'DAS Tukad Unda', jenis:'AWLR', elev:'285 m dpl', status:'Aktif', debit:'5.88', tma:'0.98', x:600, y:200, trend:[4.2,4.8,5.1,5.5,5.7,5.8,5.88] },
+          { id:'HID-005', name:'Sta. Unda Klungkung', kab:'Kab. Klungkung', das:'DAS Tukad Unda', jenis:'AWLR', elev:'55 m dpl', status:'Aktif', debit:'9.34', tma:'1.55', x:580, y:270, trend:[7.8,8.2,8.6,9.0,9.1,9.2,9.34] },
+          { id:'HID-006', name:'Sta. Penet Tabanan', kab:'Kab. Tabanan', das:'DAS Tukad Penet', jenis:'AWLR', elev:'178 m dpl', status:'Aktif', debit:'3.21', tma:'0.75', x:358, y:195, trend:[2.8,2.9,3.0,3.1,3.2,3.2,3.21] },
+          { id:'HID-007', name:'Sta. Badung Mumbul', kab:'Kab. Badung', das:'DAS Tukad Badung', jenis:'AWLR', elev:'95 m dpl', status:'Aktif', debit:'4.67', tma:'0.88', x:482, y:222, trend:[3.9,4.1,4.3,4.5,4.6,4.6,4.67] },
+          { id:'HID-008', name:'Sta. Pakerisan Tampaksiring', kab:'Kab. Gianyar', das:'DAS Tukad Pakerisan', jenis:'AWLR', elev:'360 m dpl', status:'Aktif', debit:'2.95', tma:'0.65', x:540, y:195, trend:[2.2,2.4,2.6,2.8,2.9,2.9,2.95] },
+          { id:'HID-009', name:'Sta. Penakar Bedugul', kab:'Kab. Tabanan', das:'DAS Tukad Balian', jenis:'ARR', elev:'1400 m dpl', status:'Aktif', debit:'-', tma:'-', x:340, y:168, trend:[35,28,42,18,12,22,30] },
+          { id:'HID-010', name:'Sta. Balian Jembrana', kab:'Kab. Jembrana', das:'DAS Tukad Balian', jenis:'AWLR', elev:'65 m dpl', status:'Aktif', debit:'6.14', tma:'1.12', x:255, y:225, trend:[5.0,5.3,5.7,5.9,6.0,6.1,6.14] },
+          { id:'HID-011', name:'Sta. Buleleng Timur', kab:'Kab. Buleleng', das:'DAS Tukad Buleleng', jenis:'ARR', elev:'210 m dpl', status:'Aktif', debit:'-', tma:'-', x:665, y:180, trend:[18,22,15,28,12,10,18] },
+          { id:'HID-012', name:'Sta. Sangsang Hulu', kab:'Kab. Gianyar', das:'DAS Tukad Sangsang', jenis:'AWLR', elev:'220 m dpl', status:'Aktif', debit:'1.85', tma:'0.45', x:560, y:210, trend:[1.5,1.6,1.7,1.8,1.8,1.8,1.85] },
+          { id:'HID-013', name:'Sta. Petanu Blahbatuh', kab:'Kab. Gianyar', das:'DAS Tukad Petanu', jenis:'AWLR', elev:'88 m dpl', status:'Aktif', debit:'3.40', tma:'0.72', x:545, y:248, trend:[2.8,3.0,3.1,3.2,3.3,3.4,3.40] },
+          { id:'HID-014', name:'Sta. Penakar Karangasem', kab:'Kab. Karangasem', das:'DAS Tukad Unda', jenis:'ARR', elev:'580 m dpl', status:'Aktif', debit:'-', tma:'-', x:660, y:210, trend:[25,30,20,18,22,28,25] },
+          { id:'HID-015', name:'Sta. Penakar Gianyar', kab:'Kab. Gianyar', das:'DAS Tukad Pakerisan', jenis:'ARR', elev:'125 m dpl', status:'Aktif', debit:'-', tma:'-', x:565, y:245, trend:[14,16,12,18,10,15,14] },
+          { id:'HID-016', name:'Sta. Ayung Ubud', kab:'Kab. Gianyar', das:'DAS Tukad Ayung', jenis:'AWLR', elev:'185 m dpl', status:'Aktif', debit:'11.23', tma:'1.78', x:498, y:230, trend:[9.5,10.1,10.5,10.9,11.0,11.1,11.23] },
+          { id:'HID-017', name:'Sta. Penakar Negara', kab:'Kab. Jembrana', das:'DAS Tukad Balian', jenis:'ARR', elev:'45 m dpl', status:'Aktif', debit:'-', tma:'-', x:160, y:210, trend:[20,18,15,22,12,16,20] },
+          { id:'HID-018', name:'Sta. Penet Hulu', kab:'Kab. Tabanan', das:'DAS Tukad Penet', jenis:'ARR', elev:'540 m dpl', status:'Aktif', debit:'-', tma:'-', x:375, y:165, trend:[30,25,35,20,18,22,28] },
+          { id:'HID-019', name:'Sta. Unda Bebandem', kab:'Kab. Karangasem', das:'DAS Tukad Unda', jenis:'AWLR', elev:'420 m dpl', status:'Tidak Aktif', debit:'-', tma:'-', x:635, y:185, trend:[] },
+          { id:'HID-020', name:'Sta. Badung Hulu', kab:'Kab. Badung', das:'DAS Tukad Badung', jenis:'ARR', elev:'620 m dpl', status:'Tidak Aktif', debit:'-', tma:'-', x:455, y:168, trend:[] },
+          { id:'HID-021', name:'Sta. Buleleng Barat', kab:'Kab. Buleleng', das:'DAS Tukad Buleleng', jenis:'ARR', elev:'180 m dpl', status:'Tidak Aktif', debit:'-', tma:'-', x:200, y:162, trend:[] },
+          { id:'HID-022', name:'Sta. Jembrana Selatan', kab:'Kab. Jembrana', das:'DAS Tukad Balian', jenis:'AWLR', elev:'28 m dpl', status:'Tidak Aktif', debit:'-', tma:'-', x:145, y:240, trend:[] },
+          { id:'HID-023', name:'Sta. Klungkung Timur', kab:'Kab. Klungkung', das:'DAS Tukad Unda', jenis:'ARR', elev:'95 m dpl', status:'Tidak Aktif', debit:'-', tma:'-', x:610, y:288, trend:[] },
+          { id:'HID-024', name:'Sta. Sanur Pesisir', kab:'Kota Denpasar', das:'DAS Tukad Badung', jenis:'ARR', elev:'5 m dpl', status:'Tidak Aktif', debit:'-', tma:'-', x:505, y:305, trend:[] },
+        ];
+
+        let filteredStations = [...stations];
+        let selectedStation = null;
+
+        // Render markers on SVG map
+        function renderMarkers() {
+          const g = document.getElementById('station-markers');
+          g.innerHTML = '';
+          stations.forEach(s => {
+            const isActive = s.status === 'Aktif';
+            const isSelected = selectedStation && selectedStation.id === s.id;
+            const isFiltered = filteredStations.find(f => f.id === s.id);
+            const color = isActive ? '#22c55e' : '#94a3b8';
+            const opacity = isFiltered ? 1 : 0.25;
+
+            const marker = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            marker.setAttribute('class', 'station-marker' + (isSelected ? ' selected' : ''));
+            marker.setAttribute('data-id', s.id);
+            marker.setAttribute('opacity', opacity);
+
+            // Pulse ring for active
+            if (isActive) {
+              const pulse = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              pulse.setAttribute('cx', s.x); pulse.setAttribute('cy', s.y);
+              pulse.setAttribute('r', '11'); pulse.setAttribute('fill', color);
+              pulse.setAttribute('opacity', '0.2');
+              marker.appendChild(pulse);
+            }
+
+            const outer = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            outer.setAttribute('class', 'outer');
+            outer.setAttribute('cx', s.x); outer.setAttribute('cy', s.y);
+            outer.setAttribute('r', isSelected ? '9' : '7');
+            outer.setAttribute('fill', isSelected ? '#c69749' : color);
+            outer.setAttribute('stroke', 'white'); outer.setAttribute('stroke-width', '2');
+            marker.appendChild(outer);
+
+            // Icon dot
+            const inner = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            inner.setAttribute('cx', s.x); inner.setAttribute('cy', s.y);
+            inner.setAttribute('r', '3'); inner.setAttribute('fill', 'white');
+            marker.appendChild(inner);
+
+            marker.addEventListener('click', () => selectStation(s));
+            marker.addEventListener('mouseenter', (e) => showTooltip(e, s));
+            marker.addEventListener('mouseleave', hideTooltip);
+            g.appendChild(marker);
+          });
+        }
+
+        function selectStation(s) {
+          selectedStation = s;
+          renderMarkers();
+
+          document.getElementById('panel-empty').classList.add('hidden');
+          document.getElementById('panel-detail').classList.remove('hidden');
+
+          document.getElementById('detail-name').textContent = s.name;
+          document.getElementById('detail-id').textContent = s.id + ' · ' + s.jenis;
+          document.getElementById('detail-kab').textContent = s.kab.replace('Kab. ','').replace('Kota ','');
+          document.getElementById('detail-das').textContent = s.das.replace('DAS Tukad ','');
+          document.getElementById('detail-jenis').textContent = s.jenis === 'AWLR' ? 'AWLR (Otomatis)' : 'ARR (Curah Hujan)';
+          document.getElementById('detail-elev').textContent = s.elev;
+
+          const badge = document.getElementById('detail-badge');
+          if (s.status === 'Aktif') {
+            badge.className = 'shrink-0 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 border border-emerald-200';
+            badge.textContent = '● Aktif';
+          } else {
+            badge.className = 'shrink-0 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold bg-slate-100 text-slate-500 border border-slate-200';
+            badge.textContent = '○ Tidak Aktif';
+          }
+
+          const dataEl = document.getElementById('detail-data');
+          if (s.status === 'Tidak Aktif') {
+            dataEl.innerHTML = '<div class="text-xs text-slate-400 italic">Data tidak tersedia — stasiun tidak aktif</div>';
+          } else {
+            let rows = '';
+            if (s.debit !== '-') rows += `<div class="flex justify-between text-xs"><span class="text-[var(--sea)]">Debit</span><span class="font-semibold text-[var(--ink)]">${s.debit} m³/s</span></div>`;
+            if (s.tma !== '-') rows += `<div class="flex justify-between text-xs"><span class="text-[var(--sea)]">Tinggi Muka Air</span><span class="font-semibold text-[var(--ink)]">${s.tma} m</span></div>`;
+            if (s.jenis === 'ARR') rows += `<div class="flex justify-between text-xs"><span class="text-[var(--sea)]">Curah Hujan</span><span class="font-semibold text-[var(--ink)]">${s.trend[s.trend.length-1]} mm</span></div>`;
+            dataEl.innerHTML = rows || '<div class="text-xs text-slate-400">–</div>';
+          }
+
+          // Draw sparkline
+          const chartEl = document.getElementById('detail-chart');
+          if (s.trend && s.trend.length > 0) {
+            const min = Math.min(...s.trend), max = Math.max(...s.trend);
+            const range = max - min || 1;
+            const w = 260, h = 60, pad = 8;
+            const pts = s.trend.map((v, i) => {
+              const x2 = pad + (i / (s.trend.length-1)) * (w - pad*2);
+              const y2 = h - pad - ((v - min) / range) * (h - pad*2);
+              return `${x2},${y2}`;
+            }).join(' ');
+            chartEl.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="100%" preserveAspectRatio="none">
+              <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e6091" stop-opacity="0.3"/><stop offset="100%" stop-color="#1e6091" stop-opacity="0"/></linearGradient></defs>
+              <polygon points="${pts} ${w-pad},${h} ${pad},${h}" fill="url(#sg)"/>
+              <polyline points="${pts}" fill="none" stroke="#1e6091" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="${pts.split(' ').pop().split(',')[0]}" cy="${pts.split(' ').pop().split(',')[1]}" r="3.5" fill="#1e6091"/>
+            </svg>`;
+          } else {
+            chartEl.innerHTML = '<div class="flex items-center justify-center h-full text-xs text-slate-400">Tidak ada data</div>';
+          }
+        }
+
+        const tooltip = document.getElementById('map-tooltip');
+        function showTooltip(e, s) {
+          const rect = e.target.closest('svg').getBoundingClientRect();
+          const svgEl = e.target.closest('svg');
+          const pt = svgEl.createSVGPoint();
+          pt.x = e.clientX; pt.y = e.clientY;
+          const svgP = pt.matrixTransform(svgEl.getScreenCTM().inverse());
+          const vbW = 900, vbH = 480;
+          const scaleX = svgEl.clientWidth / vbW;
+          const scaleY = svgEl.clientHeight / vbH;
+          let tx = s.x * scaleX + 12, ty = s.y * scaleY - 10;
+          if (tx + 200 > svgEl.clientWidth) tx = s.x * scaleX - 210;
+          tooltip.style.left = tx + 'px';
+          tooltip.style.top = ty + 'px';
+          tooltip.innerHTML = `<div class="font-semibold text-[var(--ink)] text-xs">${s.name}</div>
+            <div class="text-slate-400 mt-0.5">${s.id} · ${s.jenis}</div>
+            <div class="mt-1.5 flex gap-3">
+              <span class="text-slate-500">${s.kab}</span>
+            </div>
+            <div class="mt-1 text-slate-500">${s.das}</div>
+            <div class="mt-1.5"><span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ${s.status==='Aktif' ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}">${s.status}</span></div>`;
+          tooltip.classList.remove('hidden');
+        }
+        function hideTooltip() { tooltip.classList.add('hidden'); }
+
+        // Table render
+        function renderTable(list) {
+          const tbody = document.getElementById('station-table-body');
+          tbody.innerHTML = list.map(s => `
+            <tr class="hover:bg-slate-50 cursor-pointer transition" onclick="window._selectStation('${s.id}')">
+              <td class="px-5 py-3 font-mono text-xs text-slate-500">${s.id}</td>
+              <td class="px-4 py-3 font-medium text-[var(--ink)] text-sm">${s.name}</td>
+              <td class="px-4 py-3 text-xs text-slate-600">${s.kab}</td>
+              <td class="px-4 py-3 text-xs text-slate-600">${s.das.replace('DAS ','')}</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${s.jenis==='AWLR' ? 'bg-blue-50 text-blue-700' : 'bg-amber-50 text-amber-700'}">${s.jenis}</span></td>
+              <td class="px-4 py-3 text-xs font-mono text-slate-700">${s.debit !== '-' ? s.debit : '—'}</td>
+              <td class="px-4 py-3 text-xs font-mono text-slate-700">${s.tma !== '-' ? s.tma : '—'}</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${s.status==='Aktif' ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-100 text-slate-500'}">${s.status==='Aktif'?'●':'○'} ${s.status}</span></td>
+            </tr>`).join('');
+          document.getElementById('table-count').textContent = `Menampilkan ${list.length} dari ${stations.length} stasiun`;
+        }
+
+        window._selectStation = function(id) {
+          const s = stations.find(x => x.id === id);
+          if (s) { selectStation(s); window.scrollTo({top:0, behavior:'smooth'}); }
+        };
+
+        window.applyFilters = function() {
+          const kab = document.getElementById('filter-kab').value;
+          const das = document.getElementById('filter-das').value;
+          const jenis = document.getElementById('filter-jenis').value;
+          const status = document.getElementById('filter-status').value;
+          const jenisMap = {'Curah Hujan':'ARR','Debit Sungai':'AWLR','Tinggi Muka Air':'AWLR','Sedimen':'AWLR','Neraca Air':'AWLR'};
+          filteredStations = stations.filter(s =>
+            (!kab || s.kab === kab) &&
+            (!das || s.das === das) &&
+            (!jenis || s.jenis === jenisMap[jenis]) &&
+            (!status || s.status === status)
+          );
+          document.getElementById('filter-count').textContent = `Menampilkan ${filteredStations.length} dari ${stations.length} stasiun`;
+          renderMarkers();
+          renderTable(filteredStations);
+        };
+
+        window.resetFilters = function() {
+          ['filter-kab','filter-das','filter-jenis','filter-status'].forEach(id => document.getElementById(id).value = '');
+          document.getElementById('filter-periode').value = 'Harian';
+          filteredStations = [...stations];
+          document.getElementById('filter-count').textContent = `Menampilkan ${stations.length} dari ${stations.length} stasiun`;
+          renderMarkers();
+          renderTable(filteredStations);
+        };
+
+        window.filterTable = function() {
+          const q = document.getElementById('table-search').value.toLowerCase();
+          const list = filteredStations.filter(s =>
+            s.name.toLowerCase().includes(q) || s.id.toLowerCase().includes(q) ||
+            s.kab.toLowerCase().includes(q) || s.das.toLowerCase().includes(q)
+          );
+          renderTable(list);
+        };
+
+        // Init
+        renderMarkers();
+        renderTable(stations);
+      })();
+    </script>
+  </section>
+
+  <!-- Hidrometeorologi -->
+  <section id="page-hidrometeorologi" class="page">
+    <div class="bg-gradient-to-b from-[var(--mist)] to-transparent border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <nav class="text-xs text-slate-500"><a href="#" data-tab="home"
+            class="tab-btn hover:text-[var(--sea)]">Beranda</a> <span class="mx-1">/</span> <span
+            class="text-[var(--ink)] font-medium">Hidrometeorologi</span></nav>
+        <div class="mt-5 flex items-start justify-between gap-6 flex-wrap">
+          <div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--ink)] mt-2">
+              Hidrometeorologi</h1>
+          </div>
+          <span
+            class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 border border-amber-200 rounded-full px-3 py-1.5 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            Dalam pengembangan
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-8">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 ring-soft">
+          <div class="flex items-center gap-3 text-[var(--aqua)] font-semibold text-sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 2" />
+            </svg>
+            Pemberitahuan
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl md:text-3xl font-semibold text-[var(--ink)] mt-3 leading-snug">
+            Halaman ini sedang dalam tahap penyiapan dan pengembangan.
+          </h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Mohon perhatian Anda bahwa laman yang berisi data dan/atau informasi <strong>Hidrometeorologi</strong> ini
+            sedang dalam tahap penyiapan dan pengembangan.
+            Kami berkomitmen untuk menyediakan akses yang komprehensif dan akurat terhadap data Hidrometeorologi di
+            Wilayah Sungai Bali-Penida.
+            Kami bekerja keras untuk memastikan semua data dan/atau informasi yang disajikan relevan dan mudah diakses.
+          </p>
+          <p class="text-slate-600 mt-3 leading-relaxed">Terima kasih atas dukungan dan kontribusi Anda dalam
+            pengelolaan Sumber Daya Air di Wilayah Sungai Bali-Penida.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#"
+              class="bg-[var(--ink)] text-white font-semibold text-sm px-4 py-2.5 rounded-full inline-flex items-center gap-2">
+              Lihat Data
+            </a>
+            <button data-tab="home"
+              class="tab-btn border border-slate-300 hover:bg-slate-50 font-semibold text-sm px-4 py-2.5 rounded-full">Kembali
+              ke Beranda</button>
+          </div>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center">
+            <div class="text-3xl">🌧️</div>
+            <div class="font-semibold text-[var(--ink)] mt-2">Prakiraan Hujan</div>
+            <div class="text-xs text-slate-500 mt-1">Segera hadir</div>
+          </div>
+          <div class="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center">
+            <div class="text-3xl">💨</div>
+            <div class="font-semibold text-[var(--ink)] mt-2">Prakiraan Kondisi Iklim dan Peringatan Dini Untuk Kondisi
+              Iklim Ekstrim</div>
+            <div class="text-xs text-slate-500 mt-1">Segera hadir</div>
+          </div>
+          <div class="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center">
+            <div class="text-3xl">🌡️</div>
+            <div class="font-semibold text-[var(--ink)] mt-2">Informasi Lain Terkait Dengan Kondisi Atmosfer</div>
+            <div class="text-xs text-slate-500 mt-1">Segera hadir</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hidrogeologi -->
+  <section id="page-hidrogeologi" class="page">
+    <div class="bg-gradient-to-b from-[var(--sand)] to-transparent border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <nav class="text-xs text-slate-500"><a href="#" data-tab="home"
+            class="tab-btn hover:text-[var(--sea)]">Beranda</a> <span class="mx-1">/</span> <span
+            class="text-[var(--ink)] font-medium">Hidrogeologi</span></nav>
+        <div class="mt-5 flex items-start justify-between gap-6 flex-wrap">
+          <div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--ink)] mt-2">Hidrogeologi
+            </h1>
+          </div>
+          <span
+            class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 border border-amber-200 rounded-full px-3 py-1.5 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            Dalam pengembangan
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-8">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 ring-soft">
+          <div class="flex items-center gap-3 text-amber-700 font-semibold text-sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 2" />
+            </svg>
+            Pemberitahuan
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl md:text-3xl font-semibold text-[var(--ink)] mt-3 leading-snug">
+            Halaman ini sedang dalam tahap penyiapan dan pengembangan.
+          </h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Mohon perhatian Anda bahwa laman yang berisi data dan/atau informasi <strong>Hidrogeologi</strong> ini
+            sedang dalam tahap penyiapan dan pengembangan.
+            Kami berkomitmen untuk menyediakan akses yang komprehensif dan akurat terhadap data Hidrogeologi di Wilayah
+            Sungai Bali-Penida.
+            Kami bekerja keras untuk memastikan semua data dan/atau informasi yang disajikan relevan dan mudah diakses.
+          </p>
+          <p class="text-slate-600 mt-3 leading-relaxed">Terima kasih atas dukungan dan kontribusi Anda dalam
+            pengelolaan Sumber Daya Air di Wilayah Sungai Bali-Penida.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#"
+              class="bg-[var(--ink)] text-white font-semibold text-sm px-4 py-2.5 rounded-full inline-flex items-center gap-2">
+              Lihat Data
+            </a>
+            <button data-tab="home"
+              class="tab-btn border border-slate-300 hover:bg-slate-50 font-semibold text-sm px-4 py-2.5 rounded-full">Kembali
+              ke Beranda</button>
+          </div>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center">
+            <div class="text-3xl">⛲</div>
+            <div class="font-semibold text-[var(--ink)] mt-2">Potensi Air Tanah</div>
+            <div class="text-xs text-slate-500 mt-1">Segera hadir</div>
+          </div>
+          <div class="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center">
+            <div class="text-3xl">🪨</div>
+            <div class="font-semibold text-[var(--ink)] mt-2">Informasi Mengenai Kondisi Akuifer</div>
+            <div class="text-xs text-slate-500 mt-1">Segera hadir</div>
+          </div>
+          <div class="rounded-2xl border border-dashed border-slate-300 bg-white/50 p-5 text-center">
+            <div class="text-3xl">📊</div>
+            <div class="font-semibold text-[var(--ink)] mt-2">Informasi Lain Terkait Air Tanah</div>
+            <div class="text-xs text-slate-500 mt-1">Segera hadir</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-kontak" class="page">
+    <div class="bg-gradient-to-b from-[var(--mist)] to-transparent border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <nav class="text-xs text-slate-500">
+          <a href="#" data-tab="home" class="tab-btn hover:text-[var(--sea)]">Beranda</a>
+          <span class="mx-1">/</span>
+          <span class="text-[var(--ink)] font-medium">Kontak</span>
+        </nav>
+        <div class="mt-5">
+          <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--ink)] mt-2">Hubungi Kami
+          </h1>
+          <p class="text-slate-600 mt-2 max-w-2xl">Informasi lengkap alamat kantor, lokasi peta, dan kontak resmi <br
+              class="mobile-br">Balai Wilayah Sungai Bali-Penida.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+
+        <div class="lg:col-span-5 space-y-6">
+          <div class="rounded-xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm ring-soft">
+
+            <div class="space-y-4 text-sm text-slate-600">
+              <div class="flex gap-3 items-start">
+                <div class="mt-1 text-[var(--sea)] shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-[var(--ink)]">Balai Wilayah Sungai Bali-Penida</div>
+                  <p class="mt-1">Jl. Kapten Tjok Agung Tresna No.9, Panjer, Denpasar Selatan, Kota Denpasar, Bali 80234
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-3 items-start border-t border-slate-100 pt-4">
+                <div class="mt-1 text-[var(--sea)] shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L23 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-[var(--ink)]">Email Resmi</div>
+                  <p class="mt-1">tkpsda.wsbalipenida@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="flex gap-3 items-start border-t border-slate-100 pt-4">
+                <div class="mt-1 text-[var(--sea)] shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path
+                      d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 1.5h8.5a4.25 4.25 0 014.25 4.25v8.5a4.25 4.25 0 01-4.25 4.25h-8.5A4.25 4.25 0 013.5 16.25v-8.5A4.25 4.25 0 017.75 3.5zm8.75 1a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5A3.5 3.5 0 1112 15.5 3.5 3.5 0 0112 8.5z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-[var(--ink)]">Instagram</div>
+                  <a href="https://www.instagram.com/pu_sda_balipenida?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="mt-1">@pu_sda_balipenida</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm ring-soft overflow-hidden h-[450px]">
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Balai%20Wilayah%20Sungai%20Bali-Penida%2C%20JL%20Kapten%20Tjok%20Agung%20Tresna%2C%20Panjer%2C%20Denpasar%20City%2C%20Bali%2C%20Indonesia&maptype=roadmap"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" class="rounded-xl">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[var(--ink)] text-white/80 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3">
+          <div>
+            <div class="text-white font-display font-semibold">Portal SIH3</div>
+            <div class="text-xs text-white/60">Balai Wilayah Sungai Bali-Penida</div>
+          </div>
+        </div>
+        <p class="text-sm mt-4 max-w-md">Sistem Informasi Hidrologi, Hidrometeorologi, dan Hidrogeologi
+        <div>Jl. Kapten Tjok Agung Tresna No.9, Panjer, Denpasar Selatan, 80234</div>
+        </p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="text-white font-semibold mb-3 text-sm">Visitor Counter</div>
+        <ul class="space-y-2 text-sm">
+          <div>Bulan ini : 120</div>
+          <div>Minggu ini : 50</div>
+          <div>Hari ini : 5</div>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="text-white font-semibold mb-3 text-sm">Kontak</div>
+        <p class="text-sm">tkpsda.wsbalipenida@gmail.com</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 text-xs flex flex-wrap items-center justify-between gap-2">
+        <div>© 2026 Balai Wilayah Sungai Bali Penida</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab navigation
+    const pages = ['home', 'hidrologi', 'hidrometeorologi', 'hidrogeologi', 'kontak', 'dokumen'];
+    function setTab(name) {
+      pages.forEach(p => {
+        const el = document.getElementById('page-' + p);
+        if (el) el.classList.toggle('active', p === name);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.addEventListener('click', e => {
+      const t = e.target.closest('.tab-btn');
+      if (!t) return;
+      e.preventDefault();
+      setTab(t.dataset.tab);
+      const mm = document.getElementById('mobileMenu');
+      if (mm) mm.classList.add('hidden');
+    });
+
+    // Mobile menu toggle
+    const mBtn = document.getElementById('mobileMenuBtn');
+    const mMenu = document.getElementById('mobileMenu');
+    if (mBtn && mMenu) {
+      mBtn.addEventListener('click', () => mMenu.classList.toggle('hidden'));
+    }
+
+    // Stakeholder placeholder logos
+    const stakeholders = [
+      { n: 'Dinas PUPR Bali', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB77_QpD8wylGUV_Hq0taoAhkrvIvG8iD5gw&s', url: 'https://dinaspupr.baliprov.go.id' },
+      { n: 'BBWS / BWS Bali-Penida', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvx1_SQ0RUo3za8-QO4fECtUtWquWe7b0wug&s', url: 'https://sda.pu.go.id/balai/bwsbalipenida' },
+      { n: 'Kementerian PUPR', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Logo_Kementerian_Pekerjaan_Umum_Republik_Indonesia.svg?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original', url: 'https://pu.go.id' },
+      { n: 'BMKG', img: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Logo_BMKG_%282010%29.png', url: 'https://www.bmkg.go.id' },
+      { n: 'Pemprov Bali', img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Official_seal_of_the_Province_of_Bali.png', url: 'https://www.baliprov.go.id' },
+      { n: 'Badan Geologi', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzipDetogjhAZijUKsOXspFsh_nv_n-0-vWQ&s', url: 'https://geologi.esdm.go.id' },
+      { n: 'PDAM Bali', img: 'https://play-lh.googleusercontent.com/qRt31-ItSjuMMtqMvaZXV1_SYXFKtqGRA8cEFdQjSV7BFEHzx3TTCK4EebX_9gHN_Dk', url: 'https://pdambali.org/' },
+      { n: 'BPDAS Unda Anyar', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxERfLhE1sr63xpc_BaHFWWQj291rurmHzTw&s', url: 'https://www.instagram.com/undaanyar/' },
+      { n: 'Universitas Udayana', img: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Udayana_University_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original', url: 'https://www.unud.ac.id' },
+      { n: 'BNPB / BPBD', img: 'https://zonalogo.com/api/asset-preview?url=https%3A%2F%2Fassets.zonalogo.com%2Fgovernment%2Fbnpb.go.id%2Flogo-1772361034670-296.png&theme=dark&v=v2', url: 'https://bpbd.baliprov.go.id' },
+      { n: 'KLHK', img: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Lambang_Kementerian_Lingkungan_Hidup_dan_Kehutanan.png', url: 'https://www.menlhk.go.id' },
+      { n: 'PUPR Kab/Kota', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUTvmdkaUqbOfl6ubQkr7scbeqNcribKP-sA&s', url: 'https://www.pu.denpasarkota.go.id/' }
+    ];
+    const palette = ['#1e6091', '#168aad', '#0b2545', '#13315c', '#c69749', '#168aad'];
+    function renderLogos(target, count) {
+      const root = document.getElementById(target);
+      if (!root) return;
+      root.innerHTML = stakeholders.slice(0, count).map((s, i) => `
+      <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-white/95 text-[var(--ink)] p-4 flex items-center gap-3 border border-white/30 hover:bg-slate-50 transition block">
+        <img src="${s.img}" alt="Logo ${s.n}" class="w-10 h-10 rounded-lg object-contain">
+        <div class="text-sm font-semibold leading-tight">${s.n}</div>
+      </a>
+    `).join('');
+    }
+    renderLogos('stakeGrid', 6);
+    // Full page
+    const full = document.getElementById('stakeGridFull');
+    if (full) {
+      full.innerHTML = stakeholders.map((s, i) => `
+      <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-white border border-slate-200 p-5 flex items-center gap-3 hover:-translate-y-1 hover:shadow-md transition block">
+        <img src="${s.img}" alt="Logo ${s.n}" class="w-12 h-12 rounded-xl object-contain">
+        <div>
+          <div class="font-semibold text-[var(--ink)] text-sm leading-tight">${s.n}</div>          
+        </div>
+      </a>
+    `).join('');
+    }
+  </script>
+</body>
+
+</html>
