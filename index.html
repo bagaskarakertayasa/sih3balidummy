@@ -266,7 +266,7 @@
         <button data-tab="hidrologi"
           class="tab-btn text-left card-grad-h rounded-3xl p-6 ring-soft border border-white hover:-translate-y-1 transition group">
           <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-[var(--sea)] text-white grid place-items-center">
+            <div class="w-12 h-12 rounded-2xl bg-[var(--aqua)] text-white grid place-items-center">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13z" />
               </svg>
@@ -335,9 +335,10 @@
         <div class="relative grid lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-12 text-center flex flex-col items-center mx-auto">
             <h3 class="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mt-3">Apa Itu SIH3</h3>
-            <p class="text-white/75 mt-3 max-w-md">Portal SIH3 merupakan platform integrasi data dan informasi
-              pengelolaan hidrologi, hidrometeorologi, dan Hidrogeologi
-              yang dibangun atas kerja sama dengan Dinas PUPR
+            <p class="text-white/75 mt-3 max-w-2xl">
+              Portal SIH3 merupakan sebuah platform data dan informasi terkait pengelolaan Hidrologi, Hidrometeorologi, dan Hidrogeologi 
+                yang diperoleh dari kerjasama antara Balai Wilayah Sungai Bali Penida, Badan Meteorologi, Klimatologi, dan Geofisika (BMKG)
+                Stasiun Klimatologi Bali, serta Dinas Ketenagakerjaan dan Energi Sumber Daya Mineral (ESDM) Provinsi Bali.
             </p>
           </div>
         </div>
@@ -349,11 +350,68 @@
       <div class="mt-5">
         <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--ink)] mt-2">Instansi Terkait
           SIH3</h1>
-        <p class="text-slate-600 mt-2 max-w-2xl">Daftar instansi, lembaga, dan akademisi yang bersinergi dalam
-          pengelolaan serta pertukaran data Hidrologi, Hidrometeorologi, dan Hidrogeologi (SIH3) di Wilayah Sungai
-          Bali Penida guna mewujudkan pengelolaan sumber daya air yang terpadu.</p>
       </div>
-      <div id="stakeGridFull" class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+      <!-- Info Mini Cards Grid -->
+      <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3">
+
+        <!-- Card 1: Pengelola Portal -->
+        <div class="rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden" style="border-top: 3px solid var(--gold);">
+          <div class="p-4">
+            <div class="w-8 h-8 rounded-lg grid place-items-center mb-3" style="background: rgba(198,151,73,0.12);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="color: var(--gold);">Pengelola Portal PSIH3</div>
+            <div class="text-sm font-semibold text-[var(--ink)] leading-snug">Balai Wilayah Sungai Bali Penida</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Hidrologi -->
+        <div class="rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden" style="border-top: 3px solid var(--gold);">
+          <div class="p-4">
+            <div class="w-8 h-8 rounded-lg grid place-items-center mb-3" style="background: rgba(198,151,73,0.12);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+                <path d="M12 2s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13z"/>
+              </svg>
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="color: var(--gold);">Penanggung Jawab Pengelolaan Hidrologi</div>
+            <div class="text-sm font-semibold text-[var(--ink)] leading-snug">Balai Wilayah Sungai Bali Penida</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Hidrometeorologi -->
+        <div class="rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden" style="border-top: 3px solid var(--gold);">
+          <div class="p-4">
+            <div class="w-8 h-8 rounded-lg grid place-items-center mb-3" style="background: rgba(198,151,73,0.12);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+                <path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 20 11a4 4 0 0 1 0 8H7z"/>
+                <path d="M9 22l1-3M13 22l1-3M17 22l1-3"/>
+              </svg>
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="color: var(--gold);">Penanggung Jawab Hidrometeorologi</div>
+            <div class="text-sm font-semibold text-[var(--ink)] leading-snug">Badan Meteorologi, Klimatologi, dan Geofisika Stasiun Klimatologi Bali</div>
+          </div>
+        </div>
+
+        <!-- Card 4: Hidrogeologi -->
+        <div class="rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden" style="border-top: 3px solid var(--gold);">
+          <div class="p-4">
+            <div class="w-8 h-8 rounded-lg grid place-items-center mb-3" style="background: rgba(198,151,73,0.12);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+                <path d="M3 7h18M3 12h18M3 17h18"/><path d="M8 3v18M16 3v18" opacity=".4"/>
+              </svg>
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="color: var(--gold);">Penanggung Jawab Hidrogeologi</div>
+            <div class="text-sm font-semibold text-[var(--ink)] leading-snug">Dinas Ketenagakerjaan dan Energi Sumber Daya Mineral Provinsi Bali</div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-t-2 border-gray-300 my-6">
+
+      <div id="stakeGridFull" class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
     </section>
 
     <div class="h-20"></div>
@@ -1309,18 +1367,17 @@
 
     // Stakeholder placeholder logos
     const stakeholders = [
-      { n: 'Dinas PUPR Bali', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB77_QpD8wylGUV_Hq0taoAhkrvIvG8iD5gw&s', url: 'https://dinaspupr.baliprov.go.id' },
       { n: 'Balai Wilayah Sungai Bali Penida', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvx1_SQ0RUo3za8-QO4fECtUtWquWe7b0wug&s', url: 'https://sda.pu.go.id/balai/bwsbalipenida' },
-      { n: 'Kementerian PU', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Logo_Kementerian_Pekerjaan_Umum_Republik_Indonesia.svg?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original', url: 'https://pu.go.id' },
-      { n: 'BMKG', img: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Logo_BMKG_%282010%29.png', url: 'https://www.bmkg.go.id' },
-      { n: 'Pemprov Bali', img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Official_seal_of_the_Province_of_Bali.png', url: 'https://www.baliprov.go.id' },
-      { n: 'Badan Geologi Kementerian ESDM', img: 'https://geologi.esdm.go.id/assets/img/custom-theme/favicon.ico?v=1', url: 'https://geologi.esdm.go.id' },
-      { n: 'PDAM Bali', img: 'https://cdn.cloudifire.io/pdam/favicon.png', url: 'https://pdambali.org/' },
-      { n: 'BPDAS Unda Anyar', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxERfLhE1sr63xpc_BaHFWWQj291rurmHzTw&s', url: 'https://www.instagram.com/undaanyar/' },
-      { n: 'Universitas Udayana', img: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Udayana_University_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original', url: 'https://www.unud.ac.id' },
-      { n: 'BPBD Bali', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtamL9FLGFu4A8i3CFb9baZ4hpzS-XdLnnYA&s', url: 'https://bpbd.baliprov.go.id' },
-      { n: 'Kementerian Lingkungan Hidup dan Kehutanan', img: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Lambang_Kementerian_Lingkungan_Hidup_dan_Kehutanan.png', url: 'https://www.menlhk.go.id' },
-      { n: 'PU Denpasar Kota', img: 'https://www.pu.denpasarkota.go.id/public/uploads/Logo_220308100807_dinas-pekerjaan-umum-dan-penataan-ruang-kota-denpasar.png', url: 'https://www.pu.denpasarkota.go.id/' }
+      { n: 'Balai Besar Meteorologi, Klimatologi, dan Geofisika Wilayah III Denpasar', img: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Logo_BMKG_%282010%29.png', url: 'https://bbmkg3.bmkg.go.id/' },
+      { n: 'Badan Meteorologi, Klimatologi, dan Geofisika Stasiun Klimatologi Bali', img: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Logo_BMKG_%282010%29.png', url: 'https://staklim-bali.bmkg.go.id/' },
+      { n: 'Balai Pengelolaan Daerah Aliran Sungai Unda Anyar', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxERfLhE1sr63xpc_BaHFWWQj291rurmHzTw&s', url: 'https://www.instagram.com/undaanyar/' },
+      { n: 'Badan Perencanaan Pembangunan Daerah Provinsi Bali', img: 'https://bappeda.baliprov.go.id/wp-content/uploads/2018/12/log-baliprov-ikon-100px.png', url: 'https://bappeda.baliprov.go.id/' },
+      { n: 'Dinas Pekerjaan Umum, Penataan Ruang, Perumahan dan Kawasan Permukiman Provinsi Bali', img: 'https://dispuprkim.baliprov.go.id/wp-content/uploads/2023/04/Logo-PUPRKIM-1.png', url: 'https://disnakeresdm.baliprov.go.id/' },
+      { n: 'Dinas Ketenagakerjaan dan Energi Sumber Daya Mineral Provinsi Bali', img: 'https://disnakeresdm.baliprov.go.id/wp-content/uploads/2019/06/cropped-pemprov-192x192.png', url: 'https://geologi.esdm.go.id' },
+      { n: 'Dinas Kehutanan dan Lingkungan Hidup Provinsi Bali', img: 'https://www.balikom.info/images/logo-pemprov-bali.png', url: 'https://dklh.baliprov.go.id/' },
+      { n: 'Dinas Pertanian dan Ketahanan Pangan Provinsi Bali', img: 'https://www.balikom.info/images/logo-pemprov-bali.png', url: 'https://distanpangan.baliprov.go.id/' },
+      { n: 'Dinas Komunikasi, Informatika, dan Statistik Provinsi Bali', img: 'https://diskominfos.baliprov.go.id/wp-content/uploads/2018/01/cropped-kominfofavico1-192x192.png', url: 'https://diskominfos.baliprov.go.id/' },
+      { n: 'Pusat Pengendalian Lingkungan Hidup Bali dan Nusra', img: 'https://pusdallhbalinusra.kemenlh.go.id/assets/upload/image/logobplh.png', url: 'https://pusdallhbalinusra.kemenlh.go.id/?v=fix' }
     ];
     const palette = ['#1e6091', '#168aad', '#0b2545', '#13315c', '#c69749', '#168aad'];
     function renderLogos(target, count) {
